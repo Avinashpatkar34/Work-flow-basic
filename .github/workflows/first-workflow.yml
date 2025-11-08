@@ -3,15 +3,22 @@ on : push
 jobs:
   first-job:
     runs-on : ubuntu-latest
-    steps:
+    steps: 
     - name : checkout 
       uses: actions/checkout@v3
-    - name : welcome message
-      run: echo "hello avinash"
-    - name : list file
-      run : ls 
-    - name : read file 
-      run : cat README.md
+
+    - name : run multiple command over single run 
+      run: |
+        echo "hello avinash"
+        ls
+        cat README.md
+
+
+
+    # - name : list file
+    #   run : ls 
+    # - name : read file 
+    #   run : cat README.md
         
       
 
