@@ -1,0 +1,21 @@
+name : Draw dragon
+on : push 
+jobs:
+    ascii-artwork:
+        runs-on : ubuntu-latest
+        steps:
+         - name : checkout
+           uses : actions/checkout@v4
+         - name : install cowsay  program and executes
+           run : |
+            sudo apt-get install cowsay -y
+            cowsay -f dragon "Run for cover, i am dragon" >> dragon.txt
+            grep -i "dragon" dragon.txt
+            cat dragon.txt
+
+        
+
+
+
+
+
